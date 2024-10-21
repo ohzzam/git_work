@@ -1,0 +1,43 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+**/src/test/**
+!**/src/main/resources/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+/src/test/
+/src/main/resources/static
+/src/main/resources/static/static
+/vue/node_modules
+/vue/front/node/
+/vue/front/node_modules/
+!/vue/front/build/
+
+## quartz ###
+quartz2/
+/derby.log
