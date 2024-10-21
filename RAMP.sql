@@ -1,3 +1,4 @@
+--1021 17:21 (2) 
 --1021 17:21
 -- 컬럼데이터타입추출 sql
 SELECT CASE WHEN DATA_TYPE = 'STRING'  THEN 'VARCHAR(' || PREC || ')'  WHEN DATA_TYPE = 'CHAR'  THEN 'CHAR(' || PREC || ')'  WHEN DATA_TYPE = 'NUMERIC' THEN 'NUMERIC(' || PREC || ',' || SCALE || ')' ELSE DATA_TYPE END FROM db_attribute WHERE class_name = 'j_attachfile' AND attr_name = 'dwnld_cnt';
