@@ -1,4 +1,5 @@
--- дц╥Ё╣╔юлеме╦ютцъцБ sql
+--1021 17:21
+-- Л╩╛К÷╪К█╟Л²╢М└╟М┐─Л·┘Л╤■Л╤° sql
 SELECT CASE WHEN DATA_TYPE = 'STRING'  THEN 'VARCHAR(' || PREC || ')'  WHEN DATA_TYPE = 'CHAR'  THEN 'CHAR(' || PREC || ')'  WHEN DATA_TYPE = 'NUMERIC' THEN 'NUMERIC(' || PREC || ',' || SCALE || ')' ELSE DATA_TYPE END FROM db_attribute WHERE class_name = 'j_attachfile' AND attr_name = 'dwnld_cnt';
 
 -- alter comment include not null, default
@@ -32,27 +33,27 @@ and (A.is_nullable = 'NO' or A.default_value is not null)
 ORDER BY A.class_name, A.attr_name)
 where alter_txt is not null;
 
---юЭц╪ дц╥Ё ╟Ё╪Ж
+--Л═└Л╡╢ Л╩╛К÷╪ Й╟°Л┬≤
 select count(*) 
 FROM db_attribute A, db_class B
 WHERE A.class_name = B.class_name AND B.class_type = 'CLASS' AND B.is_system_class = 'NO'
 and A.class_name not like 'imsi%';
 
---евюл╨М╦М ╨╞╟Ф а╓╨╦╦╕ ©╒╪©©║╪╜ imsi_table евюл╨М╥н insert
+--М┘▄Л²╢К╦■К╙┘ КЁ─Й╡╫ Л═∙КЁ╢К╔╪ Л≈▒Л┘─Л≈░Л└° imsi_table М┘▄Л²╢К╦■К║° insert
 create table imsi_table(class_name varchar(100),class_name_new varchar(100));
 
---евюл╨Ма╓юг╪╜ а╤х╦
-SELECT A.CLASS_NAME AS евюл╨М╦М_1
-         , B.ATTR_NAME  AS дц╥Ё©╣╧╝╦М_2
-         , B.COMMENT     AS гя╠шдц╥Ё╦М_3
-         , B.IS_NULLABLE     AS NULL©╘╨н_6
-         , B.DATA_TYPE     AS ╣╔юлеме╦ют_7
-         ,  B.PREC  AS  ╣╔юлем╠Фюл_8
-         ,  B.SCALE  AS  ╣╔юлем╪р╪Жа║╠Фюл
-         , CASE WHEN D.KEY_ATTR_NAME IS NOT NULL THEN 'Y' END AS PKа╓╨╦_9
-         , CASE WHEN F.KEY_ATTR_NAME IS NOT NULL THEN 'Y' END AS  FKа╓╨╦_10 
-         , B.DEFAULT_VALUE AS а╕╬Юа╤╟г_11
-          ,  B.DEF_ORDER + 1 AS дц╥Ё╪Ь╪╜
+--М┘▄Л²╢К╦■Л═∙Л²≤Л└° Л║╟М ▄
+SELECT A.CLASS_NAME AS М┘▄Л²╢К╦■К╙┘_1
+         , B.ATTR_NAME  AS Л╩╛К÷╪Л≤│К╛╦К╙┘_2
+         , B.COMMENT     AS М∙°Й╦─Л╩╛К÷╪К╙┘_3
+         , B.IS_NULLABLE     AS NULLЛ≈╛К╤─_6
+         , B.DATA_TYPE     AS К█╟Л²╢М└╟М┐─Л·┘_7
+         ,  B.PREC  AS  К█╟Л²╢М└╟Й╦╦Л²╢_8
+         ,  B.SCALE  AS  К█╟Л²╢М└╟Л├▄Л┬≤Л═░Й╦╦Л²╢
+         , CASE WHEN D.KEY_ATTR_NAME IS NOT NULL THEN 'Y' END AS PKЛ═∙КЁ╢_9
+         , CASE WHEN F.KEY_ATTR_NAME IS NOT NULL THEN 'Y' END AS  FKЛ═∙КЁ╢_10 
+         , B.DEFAULT_VALUE AS Л═°Л∙╫Л║╟Й╠╢_11
+          ,  B.DEF_ORDER + 1 AS Л╩╛К÷╪Л┬°Л└°
   FROM DB_CLASS A
             INNER JOIN DB_ATTRIBUTE B
                 ON B.CLASS_NAME = A.CLASS_NAME
@@ -135,7 +136,7 @@ where alter_txt is not null;
 
 
 
----- rms_com recomment (гя╠ш╠ЗаЭ)
+---- rms_com recomment (М∙°Й╦─Й╧╗Л╖░)
 SELECT 'ALTER TABLE ' || class_name || ' MODIFY COLUMN ' || attr_name || ' ' ||
 CASE
 WHEN data_type = 'STRING'
